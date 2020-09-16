@@ -18,9 +18,3 @@ body{
   justify-content: space-between;
   list-style: none;
 }
-
-.page-header a{
-  display: block;
-  padding:0.5em;
-  text-decoration:none;
-}
