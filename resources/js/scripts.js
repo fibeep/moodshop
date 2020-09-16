@@ -37,5 +37,11 @@ for (let i = 0; i < data.length; ++i) {
 
     button.dataset.price = data[i].price
     button.innerHTML = "Add to Cart"
+    button.style.backgroundColor = "Aqua"
+    button.style.padding = "10px"
+    button.style.borderRadius = "25px"
+    button.style.borderColor = "blue"
+    button.style.fontFamily = "comic sans"
     newDiv.appendChild(button)
+
 }
