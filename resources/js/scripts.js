@@ -47,12 +47,49 @@ for (let i = 0; i < data.length; ++i) {
 }
 
 const cart = []
-
+ 
 function addItem(name, price) {
-    const item = {name: name, price: price, qty: 1}
+    for(let i = 0; i < cart.length; i += 1) {
+        if (cart[i].name === name) {
+            cart[i].qty += 1
+            return
+        }
+    }
+
+    const item = {name, price, qty: 1}
     cart.push(item) 
 }
 
+
+addItem('Apple',0.69)
+addItem('car',0.35)
+addItem('orange',0.89)
+addItem('Apple',0.69)
+
+//Show Items
 function showItems() {
-    console.log(`you have ${cart.length} items in your cart`)
+    
+   
+    console.log(`you have ${getQty()} items in your cart`);
+
+    for (let i = 0; i < cart.length; i += 1){
+        console.log(`- ${cart[i].name} $${cart[i].price} x ${cart[i].qty}`)
+    }
+    console.log(`Your total is $${getTotal()}`);
+}
+// Get Qty
+function getQty() {
+     let qty = 0;
+     for (let i = 0; i < cart.length; i += 1) {
+       qty += cart[i].qty;
+     }
+     return qty
+}
+// Get total
+function getTotal() {
+    let total = 0
+    for(let i = 0; i < cart.length; i += 1) {
+        total += cart[i].price * cart[i].qty
+    }
+    return total.toFixed(2)
 }
