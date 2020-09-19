@@ -47,7 +47,8 @@ for (let i = 0; i < data.length; ++i) {
 }
 
 const cart = []
- 
+
+//Add Item
 function addItem(name, price) {
     for(let i = 0; i < cart.length; i += 1) {
         if (cart[i].name === name) {
@@ -92,4 +93,20 @@ function getTotal() {
         total += cart[i].price * cart[i].qty
     }
     return total.toFixed(2)
+}
+
+//Remove Items
+
+function removeItem (name, qty = 0) {
+    for(let i = 0; i < cart.length; i += 1){
+        if (cart[i].name === name) {
+            if (qty > 0) {
+                cart[i].qty -= qty
+            }
+            if (cart[i].qty < 1 || qty === 0) {
+                cart.splice(i, 1)
+            }
+            return
+        }
+    }
 }
