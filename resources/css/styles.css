@@ -41,3 +41,21 @@ body{
   
 
 }
+
+button {
+  background-color: lightblue;
+  color: white;
+}
+
+footer {
+background-color: bisque;
+padding: 20px;
+}
+
+body {
+background-color: aliceblue;
+}
+
+ul {
+  list-style-type: none;
+}
