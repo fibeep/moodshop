@@ -47,6 +47,17 @@ for (let i = 0; i < data.length; ++i) {
     button.style.fontFamily = "comic sans"
     newDiv.appendChild(button)
 
+    // Query Select All Buttons
+    const all_items_button = Array.from(document.querySelectorAll("button"))
+
+    // For Each Loop
+    
+
+    all_items_button.forEach(elt => elt.addEventListener('click', () => {
+    addItem(elt.getAttribute('id'), elt.getAttribute('data-price'))
+    showItems()
+}))
+
 }
 
 const cart = []
@@ -63,12 +74,6 @@ function addItem(name, price) {
     const item = {name, price, qty: 1}
     cart.push(item) 
 }
-
-
-addItem('Apple',0.69)
-addItem('car',0.35)
-addItem('orange',0.89)
-addItem('Apple',0.69)
 
 //Show Items
 function showItems() { 
